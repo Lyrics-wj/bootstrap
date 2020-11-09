@@ -100,53 +100,38 @@ The `.disabled` class uses `pointer-events: none` to try to disable the link fun
 
 ## Block buttons
 
-Apply the `.btn-block` class to the immediate parent of a group of buttons with `.btn` to stack them vertically. Block button classes are responsive as of Bootstrap 5, allowing you to have buttons that **start stacked** and then move to their normal `inline-block` behavior at the specificed breakpoint.
-
-Classes are available across every grid breakpoint in Bootstrap with `max-width` media queries.
-
-{{< bs-table "table text-left" >}}
-| Class | Behavior |
-| --- | --- |
-| `.btn-block` | Always vertically stacked |
-| `.btn-block-sm` | Vertically stacked until the `sm` breakpoint |
-| `.btn-block-md` | Vertically stacked until the `md` breakpoint |
-| `.btn-block-lg` | Vertically stacked until the `lg` breakpoint |
-| `.btn-block-xl` | Vertically stacked until the `xl` breakpoint |
-| `.btn-block-xxl` | Vertically stacked until the `xxl` breakpoint |
-{{< /bs-table >}}
-
-This approach allows you to use create complex button layouts, and modify behaviors further with utilities.
+Create responsive stacks of full-width, "block buttons" like those in Bootstrap 4 with a mix of our display and gap utilities. By using utilities instead of button specific classes, we have much greater control over spacing, alignment, and responsive behaviors.
 
 {{< example >}}
-<div class="btn-block">
+<div class="d-grid gap-2">
   <button class="btn btn-primary" type="button">Button</button>
   <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}
 
-Here we're using the `.btn-block-md` class to stack our buttons until the `md` breakpoint is reached. Once the viewport is in the `md` breakpoint size, the buttons will revert to their `inline-block` alignment. Resize your browser to see them change.
+Here we create a responsive variation, starting with vertically stacked buttons until the `md` breakpoing, where `.d-md-block` replaces the `.d-grid` class, thus nullifying the `gap-2` utility. Resize your browser to see them change.
 
 {{< example >}}
-<div class="btn-block-md">
+<div class="d-grid gap-2 d-md-block">
   <button class="btn btn-primary" type="button">Button</button>
   <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}
 
-You can adjust the width of your block buttons with grid column classes.
+You can adjust the width of your block buttons with grid column width classes. For example, for a half-width "block button", use `.col-6`. Center it horizontally with `.mx-auto`, too.
 
 {{< example >}}
-<div class="btn-block col-6 mx-auto">
+<div class="d-grid gap-2 col-6 mx-auto">
   <button class="btn btn-primary" type="button">Button</button>
   <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}
 
-Additional utilities can be used to adjust the alignment of buttons once they're horizontal again. Here we've taken the responsive example above with `.btn-block-md` and added some flexbox and margin utilities to right align the buttons when they're no longer stacked.
+Additional utilities can be used to adjust the alignment of buttons when horizontal. Here we've taken our previous responsive example and added some flex utilities and a margin utility on the button to right align the buttons when they're no longer stacked.
 
 {{< example >}}
-<div class="btn-block-md d-md-flex justify-content-end">
-  <button class="btn btn-primary mr-2" type="button">Button</button>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary mr-md-2" type="button">Button</button>
   <button class="btn btn-primary" type="button">Button</button>
 </div>
 {{< /example >}}

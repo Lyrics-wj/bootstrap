@@ -27,7 +27,7 @@ toc: true
 
 ### Buttons
 
-- [**Block buttons have changed and are now responsive.**]({{< docsref "/components/buttons#block-buttons" >}}) Instead of applying `.btn-block` to individual buttons, a group of buttons now get wrapped in a parent `.btn-block`. These classes use `max-width` instead of `min-width` to make buttons within start out stacked until a breakpoint is reached (e.g., `.btn-block-md` will be stacked in `xs` and `sm`).
+- [**Dropped `.btn-block` in favor of CSS grid utility classes.**]({{< docsref "/components/buttons#block-buttons" >}}) Instead of applying `.btn-block` to individual buttons, a group of buttons now get wrapped in a parent `.d-grid` class and can use `.gap-*` utilities for spacing.
 
 ### Forms
 
@@ -42,6 +42,8 @@ toc: true
   - Added `.fs-*` utilities for `font-size` utilities (with RFS enabled). These use the same scale as HTML's default headings (1-6, large to small), and can be modified via Sass map.
   - Renamed `.font-weight-*` utilities as `.fw-*` for brevity and consistency.
   - Renamed `.font-style-*` utilities as `.fst-*` for brevity and consistency.
+- Added `.d-grid` to display utilities
+- Added new `gap` utilities (`.gap`) for CSS Grid layouts
 
 ## v5.0.0-alpha2
 

@@ -107,25 +107,3 @@
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
 }
-
-
-//
-// Block button
-//
-
-@each $breakpoint in map-keys($grid-breakpoints) {
-  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-
-  @include media-breakpoint-down($breakpoint) {
-    .btn-block#{$infix} {
-      > .btn {
-        display: block;
-        width: 100%;
-
-        + .btn {
-          margin-top: $btn-block-spacing-y;
-        }
-      }
-    }
-  }
-}
